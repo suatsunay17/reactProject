@@ -1,0 +1,59 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #3a89a6;
+    border-bottom: 1px solid #ddd;
+    
+  }
+  h1{
+    margin: 0;
+  }
+  h1>a {
+    margin: 0;
+    font-size: 2rem;
+    text-decoration: none;
+    color: wheat;
+
+  }
+  
+  .home {
+    color: #856464;
+    text-decoration: none;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav a {
+    margin-right: 1rem;
+    color: wheat;
+    text-decoration: none;
+  }
+  
+  #user,
+  #guest {
+    display: flex;
+    align-items: center;
+  }
+  
+  #user span {
+    margin-right: 5rem;
+    font-size: 0.9rem;
+  }
+  
+  #user a,
+  #guest a {
+    margin-right: 1rem;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  #user a:hover,
+  #guest a:hover {
+    text-decoration: underline;
+  }
+  
