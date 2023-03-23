@@ -8,11 +8,14 @@ import { AuthContext } from "./contexts/AuthContext";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Products from "./components/Products/Products";
-import {Home} from "./components/Home/Home";
+import { Home } from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
 import { Login } from "./components/Login/Login";
 import { Register } from "./components/Register/Register";
 import { Header } from "./components/Header/Header";
+import { CreateProduct } from "./components/CreateProduct/CreateProduct";
+import { ProductDetails } from "./components/ProductDetails/ProductDetails";
+import { EditProduct } from "./components/EditProduct/EditProduct";
 
 function App() {
   const navigate = useNavigate();
@@ -22,8 +25,7 @@ function App() {
   const authService = authServiceFactory(auth.accessToken);
 
   useEffect(() => {
-    productService.getAll()
-    .then(result => {
+    productService.getAll().then((result) => {
       setProducts(result);
     });
   }, []);
@@ -74,7 +76,9 @@ function App() {
   const onProductEditSubmit = async (values) => {
     const result = await productService.edit(values._id, values);
 
-    setProducts((state) => state.map((x) => (x._id === values._id ? result : x)));
+    setProducts((state) =>
+      state.map((x) => (x._id === values._id ? result : x))
+    );
 
     navigate(`/catalog/${values._id}`);
   };
@@ -94,12 +98,25 @@ function App() {
       <div>
         <Header />
         <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products products={products} />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/catalog" element={<Products products={products} />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route
+              path="/create-product"
+              element={
+                <CreateProduct onCreateProductSubmit={onCreateProductSubmit} />
+              }
+            />
+            <Route path="/catalog/:productId" element={<ProductDetails />} />
+            <Route
+              path="/catalog/:productId/edit"
+              element={
+                <EditProduct onProductEditSubmit={onProductEditSubmit} />
+              }
+            />
+          </Routes>
         </main>
         <Footer />
       </div>

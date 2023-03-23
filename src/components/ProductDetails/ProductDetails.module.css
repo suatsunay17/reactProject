@@ -1,0 +1,50 @@
+/* ProductDetail.module.css */
+
+.productDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .productTitle {
+    font-size: 24px;
+    margin: 10px 0;
+    font-weight: bold;
+  }
+  
+  .productImage {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+  
+  .productDescription {
+    font-size: 16px;
+    margin-top: 10px 0;
+    text-align: justify;
+  }  
+
+  .productButton, .deleteButton{
+    background-color: #3a89a6;
+    border: none;
+    color: wheat;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .productButton:hover{
+    background-color: wheat;
+    color: #3a89a6;
+  }
+
+  .deleteButton:hover{
+    background-color: red;
+    color: white;
+  }
