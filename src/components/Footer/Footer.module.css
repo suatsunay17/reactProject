@@ -1,19 +1,32 @@
-footer {
+.footer {
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
   background-color: #3a89a6;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
 }
 
-footer h6 {
+.info {
+  padding-top: 5px;
+  display: flex;
+  font-size: 14px;
   color: wheat;
 }
 
-footer p{
-    color: wheat;
+.social {
+  display: flex;
+  flex-direction: row;
 }
 
-span{
-    color: wheat;
+.social a {
+  color: wheat;
+  font-size: 20px;
+  margin-right: 10px;
 }
 
-i{
-    color: wheat;
+.social a:hover {
+  color: #0077b5;
 }

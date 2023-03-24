@@ -1,19 +1,24 @@
 import React from "react";
 import { ProductItem } from "./ProductItem/ProductItem";
+import styles from './Products.module.css'
 
-const Products = ({ products }) => {
+const Products = ({ products, }) => {
 
-  return(
-    <section id="catalog-page">
-      <h1>All products</h1>
+  return (
+    <section className={styles.section}>
 
-      {products.map(x=>
-        <ProductItem key={x._id} {...x} />
+      <h1 className={styles.h1}>All Products</h1>
+      <div>
+
+        {products.map(x =>
+          <ProductItem key={x._id} {...x} />
         )}
 
-        {products.length === 0 && (<h3 className="no-articles">No articles yet</h3>)}
+        {products.length === 0 && (<h3>No articles yet</h3>)}
+      </div>
     </section>
   )
+}
   // if (products) {
 
   //   return products.map(x => {
@@ -39,7 +44,6 @@ const Products = ({ products }) => {
   //     </div>
   //   )
   // }
-}
 
 
 export default Products;

@@ -1,4 +1,6 @@
 import styles from './Header.module.css'
+import {FaShoppingCart} from 'react-icons/fa'
+
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -11,12 +13,14 @@ export const Header = () => {
         <header>
             <h1><Link  to="/">PrintWorx</Link></h1>
             <nav className='nav'>
-                <Link to="/catalog">All products</Link>
+                <Link to="/catalog" className={styles.catalog}>All Products</Link>
                 {isAuthenticated && (
                     <div id="user">
-                        <span>{userEmail}</span>
+                        <span className={styles.span}>Logged in as: </span>
+                        <span className={styles.userEmail}> {userEmail}</span>
                         <Link to="/create-product">Create Product</Link>
                         <Link to="/logout">Logout</Link>
+                        <Link to ='/cart'><FaShoppingCart/> </Link>
                     </div>
                 )}
 
