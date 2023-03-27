@@ -8,10 +8,15 @@ import { useService } from '../../hooks/useService';
 import { useAuthContext } from '../../contexts/AuthContext';
 import { productReducer } from '../../reducers/productReducer';
 import * as commentService from '../../services/commentService';
-
+import { useContext } from 'react';
 import { AddComment } from './AddComment/AddComment';
 
+import { CartContext } from '../../contexts/CartContext'
+
+
 export const ProductDetails = () => {
+    const { addToCart } = useContext(CartContext);
+
     const { productId } = useParams();
     const { userId, isAuthenticated, userEmail } = useAuthContext();
     const [product, dispatch] = useReducer(productReducer, {});
@@ -85,7 +90,7 @@ export const ProductDetails = () => {
                     <h4>Filament: {product.category}</h4>
                     <h1>${product.price}</h1>
                     <p>{product.description}</p>
-                    <button>Add to Cart</button>
+                    <button  onClick={()=>addToCart(product.name,product.price,product.imageUrl)}>Add to Cart</button>
 
                     {isOwner && (
                         <div>
