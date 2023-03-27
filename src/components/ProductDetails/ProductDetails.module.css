@@ -17,6 +17,7 @@
   position: absolute;
   background: white;
   margin: 0 auto;
+  margin-bottom: auto;
   top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);

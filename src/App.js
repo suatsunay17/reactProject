@@ -48,39 +48,32 @@ function App() {
 
   return (
     <AuthProvider>
-      <div id="page-container">
-        <div id="page-container-inside">
-          <Header />
-          <main id="content-wrap">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/logout" element={<Logout />} />
-              <Route
-                path="/create-product"
-                element={
-                  <CreateProduct
-                    onCreateProductSubmit={onCreateProductSubmit}
-                  />
-                }
-              />
-              <Route
-                path="/catalog"
-                element={<Products products={products} />}
-              />
-              <Route path="/catalog/:productId" element={<ProductDetails />} />
-              <Route
-                path="/catalog/:productId/edit"
-                element={
-                  <EditProduct onProductEditSubmit={onProductEditSubmit} />
-                }
-              />
-            </Routes>
-          </main>
-        </div>
+      <div className="App">
+        <Header />
+        <main id="content-wrap">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route
+              path="/create-product"
+              element={
+                <CreateProduct onCreateProductSubmit={onCreateProductSubmit} />
+              }
+            />
+            <Route path="/catalog" element={<Products products={products} />} />
+            <Route path="/catalog/:productId" element={<ProductDetails />} />
+            <Route
+              path="/catalog/:productId/edit"
+              element={
+                <EditProduct onProductEditSubmit={onProductEditSubmit} />
+              }
+            />
+          </Routes>
+        </main>
+        <Footer />
       </div>
-      <Footer />
     </AuthProvider>
   );
 }
