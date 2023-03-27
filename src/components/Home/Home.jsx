@@ -1,13 +1,14 @@
 import React from 'react'
 import ServicesCard from './ServicesCard'
+import Carousel from './DarkCarousel'
+import styles from './Home.module.css'
 
 export const Home = () => {
     return (
         <div className='home'>
             <div>
-                <h1 className='services'>Services</h1>
                 <ServicesCard />
-                {/* <Carousel /> */}
+                <Carousel />
             </div>
         </div>
     )

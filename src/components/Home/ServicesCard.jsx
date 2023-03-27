@@ -1,10 +1,12 @@
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
+import styles from './ServicesCard.module.css'
 
 function ServicesCard() {
 
     return (
-        <div>
+        <div className={styles.services}>
+            <h1 className={styles.heading}>SERVICES</h1>
             <CardGroup>
                 <Card>
                     <Card.Img variant="top" src="https://i.pinimg.com/564x/51/34/a8/5134a892b94f11146cd3dcd4deb32ef7.jpg" />

@@ -1,0 +1,33 @@
+/* .carouselItem{
+    margin: auto;
+    height: 400px;
+}
+*/
+
+.mainCarousel {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.wrapper {
+  height: 50%;
+}
+
+.heading {
+  color: #111;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+}
+
+.h5, .p {
+  color: white;
+  text-shadow: #fc0 1px 0 10px;
+}
+
+.mainCarousel img {
+  filter: brightness(80%);
+}
