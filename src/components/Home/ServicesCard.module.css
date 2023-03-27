@@ -11,3 +11,7 @@
     line-height: 1;
     text-align: center;
   }
+
+  .card{
+    background-image: url('../../assets/bCard.jpg');
+  }

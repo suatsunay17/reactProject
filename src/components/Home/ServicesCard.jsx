@@ -8,7 +8,7 @@ function ServicesCard() {
         <div className={styles.services}>
             <h1 className={styles.heading}>SERVICES</h1>
             <CardGroup>
-                <Card>
+                <Card className={styles.card}>
                     <Card.Img variant="top" src="https://i.pinimg.com/564x/51/34/a8/5134a892b94f11146cd3dcd4deb32ef7.jpg" />
                     <Card.Body>
                         <Card.Title>3D Printing</Card.Title>
@@ -19,7 +19,7 @@ function ServicesCard() {
                     </Card.Body>
                     
                 </Card>
-                <Card>
+                <Card className={styles.card}>
                     <Card.Img variant="top" src="https://marvle3d.co.nz/6682-large_default/revopoint-mini-3d-scanner-blue-lightprecision-002mm-dual-axis-turntable-combo.jpg" />
                     <Card.Body>
                         <Card.Title>3D Scanning</Card.Title>
@@ -30,7 +30,7 @@ function ServicesCard() {
                     </Card.Body>
                    
                 </Card>
-                <Card>
+                <Card className={styles.card}>
                     <Card.Img variant="top" src="https://i.pinimg.com/564x/49/7f/1e/497f1ed6f2dba10f464bd1db1beae941.jpg" />
                     <Card.Body>
                         <Card.Title>Prototyping</Card.Title>

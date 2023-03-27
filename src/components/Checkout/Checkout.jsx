@@ -12,7 +12,7 @@ export const Checkout = () => {
             <h2>Checkout</h2>
             <div className='shopping-bag'>
                 {items.map((item) => (
-                     <div className={styles.productItem} key={item.name}>
+                     <div className={styles.productItem} key={item.name+Math.random()}>
             <div className={styles.gallery}>
                 <div className={styles.content}>
                     <h3>{item.name}</h3>
