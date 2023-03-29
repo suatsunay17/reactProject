@@ -1,9 +1,11 @@
 import React from "react";
+import { useProductContext } from "../../contexts/productContext";
 import { ProductItem } from "./ProductItem/ProductItem";
 import styles from './Products.module.css'
 
-const Products = ({ products, }) => {
+const Products = () => {
 
+  const {products} = useProductContext()
   return (
     <section className={styles.section}>
 

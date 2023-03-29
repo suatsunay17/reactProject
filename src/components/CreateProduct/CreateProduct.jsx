@@ -1,9 +1,9 @@
+import { useProductContext } from '../../contexts/productContext';
 import { useForm } from '../../hooks/useForm';
 import styles from './CreateProduct.module.css'
 
-export const CreateProduct = ({
-    onCreateProductSubmit,
-}) => {
+export const CreateProduct = () => {
+    const {onCreateProductSubmit} = useProductContext()
     const { values, changeHandler, onSubmit } = useForm({
         name: '',
         category: '',

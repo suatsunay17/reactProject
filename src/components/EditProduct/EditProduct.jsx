@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useProductContext } from "../../contexts/productContext";
 
 import { useForm } from "../../hooks/useForm";
 import { useService } from "../../hooks/useService";
 import { productServiceFactory } from "../../services/productService";
 
-export const EditProduct = ({
-    onProductEditSubmit
-}) => {
+export const EditProduct = () => {
+    const {onProductEditSubmit} = useProductContext()
     const { productId } = useParams();
     const productService = useService(productServiceFactory);
     const { values, changeHandler, onSubmit, changeValues } = useForm({

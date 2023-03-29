@@ -6,6 +6,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import { productServiceFactory } from "./services/productService";
 import { AuthProvider } from "./contexts/AuthContext";
 import { CartProvider } from "./contexts/CartContext";
+import { ProductProvider } from "./contexts/productContext";
 
 import Products from "./components/Products/Products";
 import { Home } from "./components/Home/Home";
@@ -30,60 +31,35 @@ function App() {
     });
   }, []);
 
-  const onCreateProductSubmit = async (data) => {
-    const newProduct = await productService.create(data);
-
-    setProducts((state) => [...state, newProduct]);
-
-    navigate("/catalog");
-  };
-
-  const onProductEditSubmit = async (values) => {
-    const result = await productService.edit(values._id, values);
-
-    setProducts((state) =>
-      state.map((x) => (x._id === values._id ? result : x))
-    );
-
-    navigate(`/catalog/${values._id}`);
-  };
-
   return (
     <AuthProvider>
-      <CartProvider>
-        <div className="App">
-          <Header />
-          <main id="content-wrap">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/checkout" element={<Checkout />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/logout" element={<Logout />} />
-              <Route
-                path="/create-product"
-                element={
-                  <CreateProduct
-                    onCreateProductSubmit={onCreateProductSubmit}
-                  />
-                }
-              />
-              <Route
-                path="/catalog"
-                element={<Products products={products} />}
-              />
-              <Route path="/catalog/:productId" element={<ProductDetails />} />
-              <Route
-                path="/catalog/:productId/edit"
-                element={
-                  <EditProduct onProductEditSubmit={onProductEditSubmit} />
-                }
-              />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </CartProvider>
+      <ProductProvider>
+        <CartProvider>
+          <div className="App">
+            <Header />
+            <main id="content-wrap">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/logout" element={<Logout />} />
+                <Route path="/create-product" element={<CreateProduct />} />
+                <Route path="/catalog" element={<Products />} />
+                <Route
+                  path="/catalog/:productId"
+                  element={<ProductDetails />}
+                />
+                <Route
+                  path="/catalog/:productId/edit"
+                  element={<EditProduct />}
+                />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </CartProvider>
+      </ProductProvider>
     </AuthProvider>
   );
 }
