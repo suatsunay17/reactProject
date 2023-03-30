@@ -15,7 +15,7 @@ export const Register = () => {
 
     return (
         <div>
-            <h2>Register Page</h2><br />
+            <h2 className={styles.h2}>Register Page</h2><br />
             <div className={styles.loginForm}>
                 <form method="post" onSubmit={onSubmit} >
                     <label>Email</label>

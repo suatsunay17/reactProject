@@ -3,7 +3,7 @@ import { useForm } from '../../hooks/useForm';
 import styles from './CreateProduct.module.css'
 
 export const CreateProduct = () => {
-    const {onCreateProductSubmit} = useProductContext()
+    const { onCreateProductSubmit } = useProductContext()
     const { values, changeHandler, onSubmit } = useForm({
         name: '',
         category: '',
@@ -13,53 +13,29 @@ export const CreateProduct = () => {
     }, onCreateProductSubmit);
 
     return (
-        <div className={styles.container}>
-            <form id="create" method="POST" onSubmit={onSubmit}>
-                <h1>Create Product</h1>
-                <div className={styles.row}>
-                    <div className={styles.col25}>
-                        <label className={styles.label}>Product name:</label>
-                    </div>
-                    <div className={styles.col75}>
-                        <input value={values.name} onChange={changeHandler} type="text" id="name" name="name" placeholder="Enter product name..." />
-                    </div>
-                </div>
-                <div className={styles.row}>
-                    <div className={styles.col25}>
-                        <label className={styles.label}>Category:</label>
-                    </div>
-                    <div className={styles.col75}>
-                        <input value={values.category} onChange={changeHandler} type="text" id="category" name="category" placeholder="Enter product category..." />
-                    </div>
-                </div>
-                <div className={styles.row}>
-                    <div className={styles.col25}>
-                        <label className={styles.label}>Price:</label>
-                    </div>
-                    <div className={styles.col75}>
-                        <input value={values.price} onChange={changeHandler} type="number" id="price" name="price" min="1" placeholder="1" />
-                    </div>
-                </div>
-                <div className={styles.row}>
-                    <div className={styles.col25}>
-                        <label className={styles.label}>Image:</label>
-                    </div>
-                    <div className={styles.col75}>
-                        <input value={values.imageUrl} onChange={changeHandler} type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
-                    </div>
-                </div>
-                <div className={styles.row}>
-                    <div className={styles.col25}>
-                        <label className={styles.label}>Description:</label>
-                    </div>
-                    <div className={styles.col75}>
-                        <textarea name="description" id="description" value={values.description} onChange={changeHandler}></textarea>
-                    </div>
-                </div>
-                <div className={styles.row}>
-                    <input className="btn submit" type="submit" value="Create Product" />
-                </div>
-            </form >
+        <div>
+            <h2 className={styles.h2}>Create Product</h2><br />
+            <div className={styles.loginForm}>
+                <form method="POST" onSubmit={onSubmit}>
+                    <label>Product Name:</label>
+                    <input className={styles.Uname} type="text" id='name' name='name' placeholder="Product Name" value={values.name} onChange={changeHandler} />
+                    <br /><br />
+                    <label>Filament type:</label>
+                    <input className={styles.Uname} type="text" id='category' name='category' placeholder='PLA/PETG/TPU/ABS' value={values.category} onChange={changeHandler} />
+                    <br /><br />
+                    <label>Price: </label>
+                    <input className={styles.Uname} type="number" value={values.price} onChange={changeHandler} id='price' name='price' min='1' placeholder='1' />
+                    <br /><br />
+                    <label>Image URL:</label>
+                    <input className={styles.Uname} type="text" id='imageUrl' name='imageUrl' value={values.imageUrl} onChange={changeHandler} />
+                    <br /><br />
+                    <label>Description:</label>
+                    <textarea value={values.description} onChange={changeHandler} name="description" id="description" cols="30" rows="5"></textarea>
+                    <br /><br />
+                    <input type="submit" name="log" className={styles.log} value="Create Product" />
+                    <br /><br />
+                </form>
+            </div>
         </div>
     );
 };

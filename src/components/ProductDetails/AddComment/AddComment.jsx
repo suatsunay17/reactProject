@@ -14,5 +14,8 @@ export const AddComment = ({
                 <input className="btn submit" type="submit" value="Add Comment" />
             </form>
         </article>
+
+
+
     );
 };

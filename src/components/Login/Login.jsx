@@ -19,7 +19,7 @@ export const Login = () => {
 
   return (
       <div>
-        <h2>Login Page</h2><br />
+        <h2 className={styles.h2}>Login Page</h2><br />
         <div className={styles.loginForm}>
           <form method="POST" onSubmit={onSubmit}>
             <label>Email
