@@ -94,3 +94,14 @@ h3{
       width: 100%;
     }
   }
+
+.removeBtn{
+  font-size:35px;
+  color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.removeBtn:hover{
+  color: red;
+}
