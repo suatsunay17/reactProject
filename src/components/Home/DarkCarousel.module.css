@@ -14,18 +14,13 @@
 }
 
 .heading {
-  color: #111;
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 50px;
-  font-weight: bold;
-  letter-spacing: -1px;
-  line-height: 1;
-  text-align: center;
+ text-align: center;
+ margin-top: 3rem;
 }
 
 .h5, .p {
-  color: white;
-  text-shadow: #fc0 1px 0 10px;
+  color: #baff39 ;
+  text-shadow: #6e6e6e  1px 0 10px;
 }
 
 .mainCarousel img {

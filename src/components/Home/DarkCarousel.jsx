@@ -5,7 +5,7 @@ function DarkCarousel() {
     return (
 
         <div className={styles.mainCarousel}>
-            <h1 className={styles.heading}>PROJECTS</h1>
+            <h1 className={styles.heading}>Projects</h1>
             <div className={styles.wrapper}>
                 <Carousel variant="dark">
                     <Carousel.Item>

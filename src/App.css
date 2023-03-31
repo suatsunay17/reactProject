@@ -31,7 +31,3 @@
   display: flex;
   flex-direction: column;
 }
-
-body{
-  background-image: url("./assets/bckgr.jpg");
-}

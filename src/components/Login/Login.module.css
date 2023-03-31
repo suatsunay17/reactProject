@@ -5,14 +5,14 @@
     margin: auto;
     margin: 200 0 0 450px;
     padding: 80px;
-    background: #3a89a6;
+    background: #6e6e6e;
     border-radius: 15px ;
 }
 .h2{
     text-align: center;
 
     font-size: 4rem;
-  color: wheat;
+  color: #baff39;
   text-shadow:
     0 1px 0px #378ab4,
     1px 0 0px #5dabcd,
