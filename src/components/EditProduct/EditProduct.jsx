@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useProductContext } from "../../contexts/productContext";
+import styles from './EditProduct.module.css'
 
 import { useForm } from "../../hooks/useForm";
 import { useService } from "../../hooks/useService";
 import { productServiceFactory } from "../../services/productService";
 
 export const EditProduct = () => {
-    const {onProductEditSubmit} = useProductContext()
+    const { onProductEditSubmit } = useProductContext()
     const { productId } = useParams();
     const productService = useService(productServiceFactory);
     const { values, changeHandler, onSubmit, changeValues } = useForm({
@@ -28,52 +29,55 @@ export const EditProduct = () => {
 
 
     return (
-        <form id="edit" method="POST" onSubmit={onSubmit}>
-            <div className="container">
+        <div>
+            <h2 className={styles.h2}>Edit Product</h2>
+            <form id="edit" method="POST" onSubmit={onSubmit}>
+                <div className={styles.loginForm}>
 
-                <h1>Edit Product</h1>
-                <label >Product name:</label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={values.name}
-                    onChange={changeHandler}
-                />
+                    <label >Product name:</label>
+                    <input className={styles.Uname}
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={values.name}
+                        onChange={changeHandler}
+                    />
 
-                <label >Category:</label>
-                <input
-                    type="text"
-                    id="category"
-                    name="category"
-                    value={values.category}
-                    onChange={changeHandler}
-                />
+                    <label >Category:</label>
+                    <input className={styles.Uname}
+                        type="text"
+                        id="category"
+                        name="category"
+                        value={values.category}
+                        onChange={changeHandler}
+                    />
 
-                <label >Price:</label>
-                <input
-                    type="number"
-                    id="price"
-                    name="price"
-                    min="1"
-                    value={values.price}
-                    onChange={changeHandler}
-                />
+                    <label >Price:</label>
+                    <input className={styles.Uname}
+                        type="number"
+                        id="price"
+                        name="price"
+                        min="1"
+                        value={values.price}
+                        onChange={changeHandler}
+                    />
 
-                <label>Image:</label>
-                <input
-                    type="text"
-                    id="imageUrl"
-                    name="imageUrl"
-                    value={values.imageUrl}
-                    onChange={changeHandler}
-                />
+                    <label>Image:</label>
+                    <input className={styles.Uname}
+                        type="text"
+                        id="imageUrl"
+                        name="imageUrl"
+                        value={values.imageUrl}
+                        onChange={changeHandler}
+                    />
 
-                <label >Description:</label>
-                <textarea name="description" id="description" value={values.description} onChange={changeHandler}></textarea>
-                <input className="btn submit" type="submit" value="Edit Product" />
+                    <label >Description:</label>
+                    <textarea name="description" id="description" value={values.description} onChange={changeHandler}></textarea>
+                    <input className={styles.log} type="submit" value="Edit Product" />
 
-            </div>
-        </form>
+                </div>
+            </form>
+        </div>
+
     );
 };

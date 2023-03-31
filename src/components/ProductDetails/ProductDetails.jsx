@@ -68,7 +68,7 @@ export const ProductDetails = () => {
     return (
 
         <div className={styles.card}>
-            <nav className={styles.productNav}><FaArrowLeft className={styles.backBtn} onClick={() => navigate(-1)} />
+            <nav className={styles.productNav}><FaArrowLeft className={styles.backBtn} onClick={() => navigate('/catalog')} />
                 Back to All Products
             </nav>
             <div className={styles.photo}>
