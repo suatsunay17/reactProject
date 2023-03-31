@@ -9,6 +9,9 @@ h3{
     text-decoration: none;
   }
   
+  h2{
+    text-align: center;
+  }
   
   .gallery{
     display: contents;
