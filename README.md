@@ -6,12 +6,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `node ./server.js`
+open softuni-practice-server and run 'node ./server.js'
+
+### IF there is a problem with auth/login/logout
+clear localStorage
+
 ### `npm start`
-
-to start server:
-open server folder -> run node ./server.js
-
-IF there's problem with auth -> clear localStorage
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
