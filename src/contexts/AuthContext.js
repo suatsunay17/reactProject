@@ -22,13 +22,14 @@ export const AuthProvider = ({
 
             navigate('/catalog');
         } catch (error) {
-            console.log('There is a problem');
+            alert('Incorrect email or password!');
         }
     };
 
     const onRegisterSubmit = async (values) => {
         const { confirmPassword, ...registerData } = values;
         if (confirmPassword !== registerData.password) {
+            alert('Passwords do not match!')
             return;
         }
 
@@ -39,7 +40,7 @@ export const AuthProvider = ({
 
             navigate('/catalog');
         } catch (error) {
-            console.log('There is a problem');
+            alert('User already registered');
         }
     };
 

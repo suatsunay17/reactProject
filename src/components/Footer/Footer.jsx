@@ -92,7 +92,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.info}>
-        <p>© 2023 PrintWorx. All rights reserved.</p>
+        <p>© 2023 Printopia. All rights reserved.</p>
       </div>
       <div className={styles.social}>
         <a href="https://www.linkedin.com/in/suat-sunay-081512227/"><FaLinkedin /></a>

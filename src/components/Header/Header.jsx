@@ -14,7 +14,7 @@ export const Header = () => {
 
     return (
         <header>
-            <h1><Link to="/">PrintWorx</Link></h1>
+            <h1><Link to="/">Printopia</Link></h1>
             <nav className='nav'>
                 <Link to="/catalog" className={styles.catalog}>All Products</Link>
                 {isAuthenticated && (
