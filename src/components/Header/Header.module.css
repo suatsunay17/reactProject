@@ -1,10 +1,9 @@
-header {
+ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
   background-color: #6e6e6e;
-  border-bottom: 1px solid #ddd;
 }
 h1 {
   margin: 0;
@@ -47,9 +46,11 @@ nav a {
   margin-right: 1rem;
   font-style: italic;
   font-size: 1.5rem;
+  color: white;
 }
 
 .catalog{
   margin-right: 5rem;
   font-size: 1.5rem;
-}
+} 
+

@@ -13,9 +13,9 @@ export const Header = () => {
     const { items } = useContext(CartContext);
 
     return (
-        <header>
-            <h1><Link to="/">Printopia</Link></h1>
-            <nav className='nav'>
+        <header className={styles.header}>
+            <h1 className={styles.h1}><Link to="/">Printopia</Link></h1>
+            <nav className={styles.nav}>
                 <Link to="/catalog" className={styles.catalog}>All Products</Link>
                 {isAuthenticated && (
                     <div id="user">
