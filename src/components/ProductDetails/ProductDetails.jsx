@@ -54,16 +54,15 @@ export const ProductDetails = () => {
 
     const isOwner = product._ownerId === userId;
 
+
     const onDeleteClick = async () => {
-
-        await productService.delete(product._id);
-
-        deleteProduct(product._id);
-        // TODO: delete from state
-
-
-        navigate('/catalog');
-    };
+        if (window.confirm("Are you sure you want to delete this product?")) {
+          await productService.delete(product._id);
+          deleteProduct(product._id);
+          navigate('/catalog');
+        }
+      };
+      
 
     return (
 
@@ -89,22 +88,24 @@ export const ProductDetails = () => {
                 )}
             </div>
 
-            <div className={styles.commentSection}>
-                <h2>Comments:</h2>
-                <ul>
-                    {product.comments && product.comments.map(x => (
-                        <li key={x._id} className={styles.comment}>
-                            <p>{x.author.email}: {x.comment}</p>
-                        </li>
-                    ))}
-                </ul>
+            {product.comments && product.comments.length > 0 ? (
+                <div className={styles.commentSection}>
+                    <h2>Comments:</h2>
+                    <ul>
+                        {product.comments.map((comment) => (
+                            <li key={comment._id} className={styles.comment}>
+                                <p>{comment.author.email}: {comment.comment}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ) : (
+                <p className="no-comment">No comments.</p>
+            )}
 
-                {!product.comments?.length && (
-                    <p className="no-comment">No comments.</p>
-                )}
-            </div>
 
             {isAuthenticated && <AddComment onCommentSubmit={onCommentSubmit} />}
         </div>
+
     );
 };

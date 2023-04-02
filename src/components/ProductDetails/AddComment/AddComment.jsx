@@ -1,4 +1,5 @@
 import { useForm } from "../../../hooks/useForm";
+import styles from './AddComment.module.css'
 
 export const AddComment = ({
     onCommentSubmit,
@@ -8,8 +9,8 @@ export const AddComment = ({
     }, onCommentSubmit);
 
     return (
-        <article className="create-comment">
-            <form className="form" onSubmit={onSubmit}>
+        <article className={styles.commentArticle}>
+            <form className={styles.commentForm} onSubmit={onSubmit}>
                 <textarea name="comment" placeholder="Comment......" value={values.comment} onChange={changeHandler}></textarea>
                 <input className="btn submit" type="submit" value="Add Comment" />
             </form>

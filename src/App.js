@@ -1,7 +1,7 @@
 import "./App.css";
 
 import { useState, useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import { productServiceFactory } from "./services/productService";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -21,7 +21,6 @@ import { Logout } from "./components/Logout/Logout";
 import { Checkout } from "./components/Checkout/Checkout";
 
 function App() {
-  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const productService = productServiceFactory(); //auth.accessToken
 

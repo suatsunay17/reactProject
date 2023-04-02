@@ -25,7 +25,7 @@ const ServicesCard = () => {
             </p>
           </div>
         </div>
-        <div className="blog-card alt">
+        <div className="blog-card">
           <div className="meta">
             <div className="photo" style={{backgroundImage: 'url(https://i.pinimg.com/564x/49/7f/1e/497f1ed6f2dba10f464bd1db1beae941.jpg)'}} />
           </div>

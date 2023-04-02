@@ -1,0 +1,40 @@
+.commentArticle {
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .commentForm {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .commentForm textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    resize: none;
+    height: 100px;
+  }
+  
+  .commentForm input[type="submit"] {
+    background-color: #baff39;
+    color: #6e6e6e;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .commentForm input[type="submit"]:hover {
+    background-color: #006bbf;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .commentArticle {
+      margin-bottom: 100px;
+    }
+  }
+  
