@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
     "firebase": "^9.18.0",
+    "google-map-react": "^2.2.0",
     "mdb-react-ui-kit": "^5.1.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
@@ -53,6 +54,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@iconify/icons-mdi": "^1.2.44",
+    "@iconify/react": "^4.1.0",
     "@testing-library/react": "^14.0.0"
   }
 }

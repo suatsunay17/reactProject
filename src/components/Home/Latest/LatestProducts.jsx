@@ -19,7 +19,7 @@ const LatestProducts = () => {
       <h2 className={styles.latestProductsTitle}>Latest Products</h2>
       <ul className={styles.latestProductsList}>
         {products.map(product => (
-          <li key={product.id} className={styles.latestProductsItem}>
+          <li key={product._id} className={styles.latestProductsItem}>
             <h3 className={styles.h3}>{product.name}</h3>
             <img src={product.imageUrl} className={styles.img} />
           </li>

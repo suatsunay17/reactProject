@@ -19,6 +19,7 @@ import { ProductDetails } from "./components/ProductDetails/ProductDetails";
 import { EditProduct } from "./components/EditProduct/EditProduct";
 import { Logout } from "./components/Logout/Logout";
 import { Checkout } from "./components/Checkout/Checkout";
+import {Map} from "./components/Home/Map/Map";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -29,6 +30,8 @@ function App() {
       setProducts(result);
     });
   }, []);
+
+
 
   return (
     <AuthProvider>
@@ -55,7 +58,7 @@ function App() {
                 />
               </Routes>
             </main>
-            <Footer />
+            <Footer  />
           </div>
         </CartProvider>
       </ProductProvider>
