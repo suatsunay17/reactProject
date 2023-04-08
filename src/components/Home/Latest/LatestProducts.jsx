@@ -15,7 +15,7 @@ const LatestProducts = () => {
   }, []);
 
   return (
-    <div className={styles.latestProductsContainer}>
+    <div data-testid="latest-products"className={styles.latestProductsContainer}>
       <h2 className={styles.latestProductsTitle}>Latest Products</h2>
       <ul className={styles.latestProductsList}>
         {products.map(product => (

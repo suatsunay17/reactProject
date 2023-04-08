@@ -18,16 +18,16 @@ export const Register = () => {
             <h2 className={styles.h2}>Register Page</h2><br />
             <div className={styles.loginForm}>
                 <form method="post" onSubmit={onSubmit} >
-                    <label>Email</label>
-                    <input type="email" name="email" className={styles.Uname} placeholder="Email" value={values.email} onChange={changeHandler} />
+                    <label htmlFor='email'>Email</label>
+                    <input type="email" id='email' name="email" className={styles.Uname} placeholder="Email" value={values.email} onChange={changeHandler} />
                     <br /><br />
-                    <label>Password</label>
-                    <input type="password" name="password" className={styles.Pass} placeholder="Password" value={values.password} onChange={changeHandler} />
+                    <label htmlFor='password'>Password</label>
+                    <input type="password" id='password' name="password" className={styles.Pass} placeholder="Password" value={values.password} onChange={changeHandler} data-testid="password-input"/>
                     <br /><br />
-                    <label>Confirm Password</label>
-                    <input type="password" name="confirmPassword" className={styles.Pass} placeholder="Password" value={values.confirmPassword} onChange={changeHandler} />
+                    <label htmlFor='confirmPassword'>Confirm Password</label>
+                    <input type="password" id='confirmPassword' name="confirmPassword" className={styles.Pass} placeholder="Password" value={values.confirmPassword} onChange={changeHandler} />
                     <br /><br />
-                    <input type="submit" name="log" className={styles.log} defaultValue="Register Here" />
+                    <input type="submit" name="log" className={styles.log} value="Register Here" />
                     <br /><br />
                 </form>
             </div>

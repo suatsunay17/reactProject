@@ -29,18 +29,3 @@ export const ProductItem = ({
         </div>
     )
 }
-
-
-        // <section className={styles.products}>
-        //     <div className={styles.productCard}>
-        //         <div className={styles.productImage}>
-        //             <img src={imageUrl} alt={name} />
-        //         </div>
-        //         <div className={styles.productInfo}>
-        //             <h5>{name}</h5>
-        //             <h6>Price: ${price}</h6>
-        //             <button className={styles.buyButton}>Buy Now</button>
-
-        //         </div>
-        //     </div>
-        // </section>

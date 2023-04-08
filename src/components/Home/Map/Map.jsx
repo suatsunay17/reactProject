@@ -6,7 +6,7 @@ import { LocationPin } from "./LocationPin"
 export const Map = ({ location, zoomLevel }) => {
 
     return (
-        <div className="map">
+        <div data-testid="map" className="map">
             <h2 className="map-h2">Come Visit Us At Our Office</h2>
 
             <div className="google-map">

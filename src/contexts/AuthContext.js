@@ -1,76 +1,75 @@
-import { createContext, useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+import { createContext, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
-import { authServiceFactory } from '../services/authService';
+import { authServiceFactory } from "../services/authService";
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({
-    children,
-}) => {
-    const [auth, setAuth] = useLocalStorage('auth', {});
-    const navigate = useNavigate();
+export const AuthProvider = ({ children }) => {
+  const [auth, setAuth] = useLocalStorage("auth", {});
+  const navigate = useNavigate();
 
-    const authService = authServiceFactory(auth.accessToken)
+  const authService = authServiceFactory(auth.accessToken);
 
-    const onLoginSubmit = async (data) => {
-        try {
-            const result = await authService.login(data);
+  const onLoginSubmit = async (data) => {
+    try {
+      const result = await authService.login(data);
 
-            setAuth(result);
+      setAuth(result);
 
-            navigate('/catalog');
-        } catch (error) {
-            alert('Incorrect email or password!');
-        }
-    };
+      navigate("/catalog");
+    } catch (error) {
+      alert("Incorrect email or password!");
+      return;
+    }
+  };
 
-    const onRegisterSubmit = async (values) => {
-        const { confirmPassword, ...registerData } = values;
-        if (confirmPassword !== registerData.password) {
-            alert('Passwords do not match!')
-            return;
-        }
+  const onRegisterSubmit = async (values) => {
+    const { confirmPassword, ...registerData } = values;
+    if (confirmPassword !== registerData.password) {
+      alert("Passwords do not match!");
+      return;
+    }
 
-        try {
-            const result = await authService.register(registerData);
+    try {
+      const result = await authService.register(registerData);
 
-            setAuth(result);
+      setAuth(result);
 
-            navigate('/catalog');
-        } catch (error) {
-            alert('User already registered');
-        }
-    };
+      navigate("/catalog");
+    } catch (error) {
+      alert("User already registered");
+    }
+  };
 
-    const onLogout = async () => {
-        await authService.logout();
+  const onLogout = async () => {
+    await authService.logout();
 
-        setAuth({});
-    };
+    setAuth({});
+  };
 
-    const contextValues = {
-        onLoginSubmit,
-        onRegisterSubmit,
-        onLogout,
-        userId: auth._id,
-        token: auth.accessToken,
-        userEmail: auth.email,
-        isAuthenticated: !!auth.accessToken,
-    };
+  const contextValues = {
+    onLoginSubmit,
+    onRegisterSubmit,
+    onLogout,
+    userId: auth._id,
+    token: auth.accessToken,
+    userEmail: auth.email,
+    isAuthenticated: !!auth.accessToken,
+  };
 
-    return (
-        <>
-            <AuthContext.Provider value={contextValues}>
-                {children}
-            </AuthContext.Provider>
-        </>
-    );
+  return (
+    <>
+      <AuthContext.Provider value={contextValues}>
+        {children}
+      </AuthContext.Provider>
+    </>
+  );
 };
 
 export const useAuthContext = () => {
-    const context = useContext(AuthContext);
+  const context = useContext(AuthContext);
 
-    return context;
+  return context;
 };

@@ -3,7 +3,7 @@ import './ServicesCard.scss'
 
 const ServicesCard = () => {
     return (
-        <div>
+        <div data-testid="services-card">
             <h1 className='head'>Services</h1>
         <div className="blog-card">
           <div className="meta">

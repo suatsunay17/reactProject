@@ -4,7 +4,7 @@ import styles from './Projects.module.css'
 function Projects() {
     return (
 
-        <div className={styles.mainCarousel}>
+        <div data-testid="projects" className={styles.mainCarousel}>
             <h1 className={styles.heading}>Projects</h1>
             <div className={styles.wrapper}>
                 <Carousel variant="dark">
